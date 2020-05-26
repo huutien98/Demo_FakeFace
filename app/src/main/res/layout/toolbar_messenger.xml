@@ -29,14 +29,5 @@
             android:gravity="center"
             android:text="Inbox"
             android:textSize="20sp" />
-
-
-
-
-
     </RelativeLayout>
-
-
-
-
 </androidx.appcompat.widget.Toolbar>

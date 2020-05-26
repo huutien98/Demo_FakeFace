@@ -61,8 +61,6 @@ public class MessengerAdapter extends RecyclerView.Adapter<MessengerAdapter.View
             tv_messenger = itemView.findViewById(R.id.tv_messenger);
             tv_number = itemView.findViewById(R.id.tv_number);
             tv_time = itemView.findViewById(R.id.tv_time);
-
-
         }
     }
 }

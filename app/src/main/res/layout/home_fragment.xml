@@ -15,7 +15,6 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar_home"
             />
-
         <androidx.appcompat.widget.SearchView
             android:background="@color/white"
             android:backgroundTintMode="screen"
@@ -34,7 +33,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#f2f3fa"
         />
 
