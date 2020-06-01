@@ -1,17 +1,12 @@
 package com.vncoder.demo_1.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.SearchView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +29,8 @@ public class HomeFragment extends Fragment {
      Toolbar toolbar;
      Spinner spinner_nav;
 
+    HomeAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,12 +46,12 @@ public class HomeFragment extends Fragment {
         }
         addItemsToSpinner();
         arrayList = new ArrayList<>();
-        HomeObject object = new HomeObject("Martin Palmer",R.drawable.img_account,R.drawable.img_glitters,
+        HomeObject object = new HomeObject("Martin Palmer",R.drawable.profile1,R.drawable.background,
                 "What is the loop of Creation? How is there something from nothing? In spite" +
-                        " of the fact that it is impossible to prove that anythin….","12:20 Mon","500$");
+                        " of the fact that it is impossible to prove that anythin….","12:20 Mon","$340.00");
         HomeObject object1 = new HomeObject("Pearl Myers",R.drawable.img_account,R.drawable.btn_menu_dots,
                 "I am looking for a chilled out roommate for a house on 17th floor of a XYZ appartment.",
-                "Yesterday","290.00");
+                "Yesterday","$290.00");
         HomeObject object2 = new HomeObject("Gary Rose",R.drawable.img_account,R.drawable.img_bottom_blob,
                 "There is this awesome event happening. Let’s join it guys.",
         "yesterday","$340.00");
@@ -77,11 +74,12 @@ public class HomeFragment extends Fragment {
         arrayList.add(object5);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
-        HomeAdapter adapter = new HomeAdapter(arrayList);
+
+        
+        
+        adapter = new HomeAdapter(arrayList,getContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
-
-
         setHasOptionsMenu(true);
         return view;
      }
@@ -111,6 +109,12 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
+public interface IListener{
+        void heartClickListener(boolean isChecked,int id);
+
+}
+
 
 
 }

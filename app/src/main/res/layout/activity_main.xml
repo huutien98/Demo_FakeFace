@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".MainActivity.MainActivity">
 
+
+
     <ImageView
         android:id="@+id/img_blog"
         android:layout_width="match_parent"
@@ -17,8 +19,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ImageButton
+        android:background="@drawable/img_group_4"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/img_group_4"
@@ -53,7 +56,7 @@
 Welcome back."
         android:textColor="@color/dark_blue_grey"
         android:textSize="27sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/editTextmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -75,7 +78,8 @@ Welcome back."
         app:layout_constraintVertical_bias="0.48" />
 
     <EditText
-        android:id="@+id/editText"
+        android:inputType="text"
+        android:id="@+id/editTextmail"
         android:layout_width="172dp"
         android:layout_height="19dp"
         android:layout_marginTop="14dp"
@@ -136,7 +140,7 @@ Welcome back."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText2"
         app:layout_constraintTop_toTopOf="@+id/editText2"
-         />
+        />
 
     <View
         android:id="@+id/view"

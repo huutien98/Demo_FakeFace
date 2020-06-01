@@ -3,6 +3,7 @@ package com.vncoder.demo_1.Object;
 public class HomeObject {
      private int avatar;
      private int image;
+     private int id;
      private String name;
      private String status;
      private String time;
@@ -59,6 +60,14 @@ public class HomeObject {
 
     public String getPay() {
         return pay;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setPay(String pay) {

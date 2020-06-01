@@ -1,19 +1,13 @@
 package com.vncoder.demo_1.MainActivity;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.app.FragmentManager;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.ScaleAnimation;
-import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,7 +18,7 @@ import com.vncoder.demo_1.Fragment.NotificationFragment;
 import com.vncoder.demo_1.Fragment.ProfileFragment;
 import com.vncoder.demo_1.R;
 
-public class Main3Activity extends AppCompatActivity {
+public class Main3Activity extends AppCompatActivity implements HomeFragment.IListener {
     BottomNavigationView bottom_navigation;
     FloatingActionButton fab;
 
@@ -74,15 +68,18 @@ public class Main3Activity extends AppCompatActivity {
                     selectedFragment = new ProfileFragment();
                     break;
             }
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,selectedFragment).commit();
 
             return true;
         }
     };
 
-
-
-
-
+    @Override
+    public void heartClickListener(boolean isChecked, int id) {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if(fragment instanceof NotificationFragment){
+            ((NotificationFragment) fragment).updateList(isChecked,id);
+        }
+    }
 
 }

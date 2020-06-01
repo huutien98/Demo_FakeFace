@@ -39,6 +39,9 @@
             android:layout_marginBottom="50dp"
             android:layout_toRightOf="@+id/img_avatar" />
         <ToggleButton
+            android:text=""
+            android:textOn=""
+            android:textOff=""
             android:id="@+id/btn_1"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -55,6 +58,9 @@
             android:background="@drawable/btn_heart_animation" />
 
         <ToggleButton
+            android:text=""
+            android:textOn=""
+            android:textOff=""
             android:id="@+id/btn_2"
             android:layout_width="40dp"
             android:layout_height="40dp"
