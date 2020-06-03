@@ -1,17 +1,13 @@
 package com.vncoder.demo_1.MainActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 
 import com.vncoder.demo_1.R;
 
@@ -29,12 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.button);
         btn_back = findViewById(R.id.btn_back);
-        editTextmail = findViewById(R.id.editTextmail);
-        editText2 = findViewById(R.id.editText2);
-
-
-        mailLogin = editTextmail.getText().toString();
-        passwordLogin = editText2.getText().toString();
+        editTextmail = (EditText) findViewById(R.id.editTextmail);
+        editText2 = (EditText) findViewById(R.id.editText2);
 
         Intent intent = getIntent();
         final String mail = intent.getStringExtra("mailInput");
@@ -43,26 +35,29 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mail.equals("act")){
-                    Intent intent = new Intent(MainActivity.this, Main3Activity.class);
-                    startActivity(intent);
-                }else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle("ERROR");
-                    builder.setMessage("mail,password incorrect");
-                    builder.setCancelable(false);
-                    builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Toast.makeText(MainActivity.this, "\n" +
-                                    "mail,password incorrect", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-                }
-
-
+                Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+                   startActivity(intent);
+//                mailLogin = editTextmail.getText().toString();
+//                passwordLogin = editText2.getText().toString();
+//
+//                if (mail.equals(mailLogin)&&password.equals(passwordLogin)){
+//                    Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+//                    startActivity(intent);
+//                }else {
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                    builder.setTitle("ERROR");
+//                    builder.setMessage("mail,password incorrect");
+//                    builder.setCancelable(false);
+//                    builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            Toast.makeText(MainActivity.this, "\n" +
+//                                    "mail,password incorrect", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//                    AlertDialog alertDialog = builder.create();
+//                    alertDialog.show();
+//                }
             }
         });
 
@@ -72,12 +67,5 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.super.onBackPressed();
             }
         });
-
-
-
-
-
-
-
     }
 }

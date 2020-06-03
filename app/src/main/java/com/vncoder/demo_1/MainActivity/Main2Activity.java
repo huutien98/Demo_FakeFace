@@ -31,7 +31,6 @@ public class Main2Activity extends AppCompatActivity {
     EditText et_full_name;
     EditText et_emailAddress;
     EditText et_password;
-
     String fullname;
     String emailAddress;
     String password;
@@ -74,33 +73,35 @@ public class Main2Activity extends AppCompatActivity {
         btn_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fullname = et_full_name.getText().toString();
-                emailAddress = et_emailAddress.getText().toString();
-                password = et_password.getText().toString();
 
-                String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
+                Intent intent = new Intent(Main2Activity.this, MainActivity.class);
+                startActivity(intent);
 
-                if (fullname.isEmpty()&&emailAddress.isEmpty()&&password.isEmpty()&&password.matches(pattern)==false){
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Main2Activity.this);
-                    builder.setTitle("ERROR");
-                    builder.setMessage("User Name,mail,password Can't Is Empty!");
-                    builder.setCancelable(false);
-                    builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Toast.makeText(Main2Activity.this, "\n" +
-                                    "The password is not strong enough", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-                }else {
-                    Intent intent = new Intent(Main2Activity.this, MainActivity.class);
-                    intent.putExtra("userNameInput", fullname);
-                    intent.putExtra("mailInput",emailAddress);
-                    intent.putExtra("passwordInput",password);
-                    startActivity(intent);
-                }
+//                fullname = et_full_name.getText().toString();
+//                emailAddress = et_emailAddress.getText().toString();
+//                password = et_password.getText().toString();
+//
+//                String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
+//                if (fullname.isEmpty()&&emailAddress.isEmpty()&&password.isEmpty()&&password.matches(pattern)==false){
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(Main2Activity.this);
+//                    builder.setTitle("ERROR");
+//                    builder.setMessage("User Name,mail,password Can't Is Empty!");
+//                    builder.setCancelable(false);
+//                    builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            Toast.makeText(Main2Activity.this, "\n" +
+//                                    "The password is not strong enough", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//                    AlertDialog alertDialog = builder.create();
+//                    alertDialog.show();
+//                }else {
+//                    Intent intent = new Intent(Main2Activity.this, MainActivity.class);
+//                    intent.putExtra("mailInput",emailAddress);
+//                    intent.putExtra("passwordInput",password);
+//                    startActivity(intent);
+//                }
             }
         });
 
@@ -130,8 +131,6 @@ public class Main2Activity extends AppCompatActivity {
             }
         }
     }
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -140,10 +139,6 @@ public class Main2Activity extends AppCompatActivity {
             btn_profile.setImageBitmap(photo);
         }
     }
-
-
-
-
 
     public void showAlertDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -165,8 +160,10 @@ public class Main2Activity extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
     }
 
-
+    @Override
+    public void onBackPressed() {
+        showAlertDialog();
+    }
 }

@@ -47,7 +47,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
          NotificationObject notificationObject = arrayList.get(position);
          holder.img_avatar.setImageResource(notificationObject.getAvatar());
          holder.tv_notification.setText(notificationObject.getNotification());
-             holder.btn_1.setChecked(notificationObject.isChecked());
+         holder.btn_1.setChecked(notificationObject.isChecked());
     }
 
     @Override
@@ -66,7 +66,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             img_avatar = itemView.findViewById(R.id.img_avatar);
             tv_notification = itemView.findViewById(R.id.tv_notification);
             btn_1 = itemView.findViewById(R.id.btn_1);
-            btn_2 = itemView.findViewById(R.id.btn_2);
+            //btn_2 = itemView.findViewById(R.id.btn_2);
 
         }
     }

@@ -46,9 +46,7 @@ public class MessengerAdapter extends RecyclerView.Adapter<MessengerAdapter.View
         holder.item_messenger.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-
                 return false;
-
             }
         });
 

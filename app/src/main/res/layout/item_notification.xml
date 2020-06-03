@@ -38,10 +38,8 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="50dp"
             android:layout_toRightOf="@+id/img_avatar" />
+
         <ToggleButton
-            android:text=""
-            android:textOn=""
-            android:textOff=""
             android:id="@+id/btn_1"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -49,30 +47,16 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="109dp"
-            android:layout_marginLeft="109dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginStart="195dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="52dp"
             android:layout_marginEnd="262dp"
             android:layout_marginRight="201dp"
-            android:layout_marginBottom="4dp"
-            android:background="@drawable/btn_heart_animation" />
-
-        <ToggleButton
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/btn_heart_animation"
             android:text=""
-            android:textOn=""
             android:textOff=""
-            android:id="@+id/btn_2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="165dp"
-            android:layout_marginLeft="165dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginBottom="4dp"
-            android:background="@drawable/img_plus" />
+            android:textOn="" />
 
 
     </RelativeLayout>

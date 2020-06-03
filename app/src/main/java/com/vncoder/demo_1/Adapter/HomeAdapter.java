@@ -6,7 +6,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.CompoundButton;
@@ -24,6 +23,7 @@ import com.vncoder.demo_1.Fragment.HomeFragment;
 import com.vncoder.demo_1.Object.HomeObject;
 import com.vncoder.demo_1.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
@@ -44,6 +44,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             }
         }
      }
+    public ArrayList<HomeObject> getArrayList() {
+        return arrayList;
+    }
+
+    public void setArrayList(ArrayList<HomeObject> arrayList) {
+        this.arrayList = arrayList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -63,13 +71,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         holder.tv_name.setText(homeObject.getName());
         holder.tv_time.setText(homeObject.getTime());
         holder.tv_status.setText(homeObject.getStatus());
-        holder.tv_money.setText(homeObject.getPay());
+        DecimalFormat format = new DecimalFormat("##,##0.00");
+        holder.tv_money.setText(String.format("$%s",format.format(homeObject.getPay())));
         holder.img_avatar.setImageResource(homeObject.getAvatar());
         holder.img_status.setImageResource(homeObject.getImage());
-
-
-
-
+        holder.btn_heart.setChecked(homeObject.isChecked());
 
         holder.btn_heart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -84,7 +90,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                 mListener.heartClickListener(isChecked,homeObject.getId());
             }
         });
-
 
         holder.btn_more.setOnClickListener(new View.OnClickListener() {
             @Override

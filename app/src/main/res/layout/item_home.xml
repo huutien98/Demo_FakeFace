@@ -92,7 +92,7 @@
         <TextView
             android:typeface="monospace"
             android:id="@+id/tv_money"
-            android:layout_width="63dp"
+            android:layout_width="wrap_content"
             android:layout_height="19dp"
             android:layout_below="@id/img_status"
             android:layout_alignParentEnd="true"
@@ -103,6 +103,7 @@
             android:layout_marginRight="27dp"
             android:layout_marginBottom="15dp"
             android:gravity="center"
+            android:text="$234.00"
             android:textColor="@color/dark_blue_grey"
             android:textSize="15sp" />
     </RelativeLayout>

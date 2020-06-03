@@ -6,7 +6,8 @@ public class NotificationObject {
     boolean isChecked;
     String notification;
 
-    public NotificationObject(int avatar, String notification) {
+    public NotificationObject(int id,int avatar, String notification) {
+        this.id = id;
         this.avatar = avatar;
         this.notification = notification;
     }

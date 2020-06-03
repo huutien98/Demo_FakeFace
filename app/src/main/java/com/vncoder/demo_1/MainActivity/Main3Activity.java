@@ -18,9 +18,25 @@ import com.vncoder.demo_1.Fragment.NotificationFragment;
 import com.vncoder.demo_1.Fragment.ProfileFragment;
 import com.vncoder.demo_1.R;
 
+import java.util.HashMap;
+
 public class Main3Activity extends AppCompatActivity implements HomeFragment.IListener {
+    private static final String SELECT_FRAGMENT = "SELECT_FRAGMENT";
+    private static final String MESSENGER_FRAGMENT = "MESSENGER_FRAGMENT";
+    private static final String NOTIFICATION_FRAGMENT = "NOTIFICATION_FRAGMENT";
+    private static final String PROFILE_FRAGMENT = "PROFILE_FRAGMENT";
+    private static final String CHECKED_MAP = "CHECKED_MAP";
     BottomNavigationView bottom_navigation;
     FloatingActionButton fab;
+    HashMap<Integer,Boolean> checkeMap = new HashMap<>();
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState != null){
+            checkeMap = (HashMap<Integer, Boolean>) savedInstanceState.getSerializable(CHECKED_MAP);
+        }
+    }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -29,7 +45,6 @@ public class Main3Activity extends AppCompatActivity implements HomeFragment.ILi
         bottom_navigation = findViewById(R.id.bottom_navigation);
         fab = findViewById(R.id.fab);
         bottom_navigation.setOnNavigationItemSelectedListener(navListener);
-
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -52,34 +67,50 @@ public class Main3Activity extends AppCompatActivity implements HomeFragment.ILi
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             Fragment selectedFragment = null;
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             switch (menuItem.getItemId()) {
                 case R.id.nav_home:
                     selectedFragment = new HomeFragment();
+                    fragmentTransaction.add(R.id.fragment_container,selectedFragment,SELECT_FRAGMENT);
                     break;
                 case R.id.nav_messenger:
                     selectedFragment = new MessengerFragment();
+                    fragmentTransaction.add(R.id.fragment_container,selectedFragment,MESSENGER_FRAGMENT);
                     break;
                 case  R.id.nav_add:
                     break;
                 case R.id.nav_notification:
                     selectedFragment = new NotificationFragment();
+                    fragmentTransaction.add(R.id.fragment_container,selectedFragment,NOTIFICATION_FRAGMENT);
                     break;
                 case R.id.nav_profile:
                     selectedFragment = new ProfileFragment();
+                    fragmentTransaction.add(R.id.fragment_container,selectedFragment,PROFILE_FRAGMENT);
                     break;
             }
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,selectedFragment).commit();
-
+            fragmentTransaction.commit();
             return true;
         }
     };
 
     @Override
     public void heartClickListener(boolean isChecked, int id) {
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-        if(fragment instanceof NotificationFragment){
-            ((NotificationFragment) fragment).updateList(isChecked,id);
-        }
+        checkeMap.put(id,isChecked);
     }
 
+    public HashMap<Integer, Boolean> getCheckeMap() {
+        return checkeMap;
+    }
+
+    public void setCheckeMap(HashMap<Integer, Boolean> checkeMap) {
+        this.checkeMap = checkeMap;
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if(checkeMap != null){
+            outState.putSerializable(CHECKED_MAP,checkeMap);
+        }
+    }
 }
