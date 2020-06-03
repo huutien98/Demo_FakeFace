@@ -8,8 +8,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity.MainActivity">
 
-
-
     <ImageView
         android:id="@+id/img_blog"
         android:layout_width="match_parent"

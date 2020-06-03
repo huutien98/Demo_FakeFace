@@ -1,0 +1,41 @@
+khởi động 
+onCreate:
+onStart: 
+onResume:
+
+phím chức năng
+onPause: 
+onStop: 
+onSaveInstanceState: 
+
+trở lại:
+onRestart:
+onStart: 
+onResume: 
+
+nút home
+onPause:
+onStop: 
+onSaveInstanceState:  
+trở lại:
+onRestart:
+onStart: 
+onResume: 
+
+thoát
+onPause: 
+onStop: 
+onDestroy:
+
+xoay màn hình:
+onPause: 
+onStop: 
+onSaveInstanceState:
+onDestroy: 
+onCreate:
+onStart: 
+onRestoreInstanceState:
+onResume: 
+
+
+

@@ -3,15 +3,17 @@ package com.vncoder.demo_1.Object;
 public class HomeObject {
      private int avatar;
      private int image;
+     private int id;
      private String name;
      private String status;
      private String time;
-     private String pay;
-
-    public HomeObject(String name, int avatar, int image, String status, String time, String pay) {
-        this.name = name;
+     private float pay;
+    boolean isChecked;
+    public HomeObject(int id,int avatar, int image,  String name, String status, String time, float pay) {
+        this.id = id;
         this.avatar = avatar;
         this.image = image;
+        this.name = name;
         this.status = status;
         this.time = time;
         this.pay = pay;
@@ -57,11 +59,27 @@ public class HomeObject {
         this.time = time;
     }
 
-    public String getPay() {
+    public Float getPay() {
         return pay;
     }
 
-    public void setPay(String pay) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPay(float pay) {
         this.pay = pay;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
     }
 }

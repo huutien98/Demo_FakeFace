@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,9 +18,11 @@ import java.util.ArrayList;
 
 public class MessengerAdapter extends RecyclerView.Adapter<MessengerAdapter.ViewHolder> {
     ArrayList<MessengerObject> arrayList;
+    Context ctx;
 
-    public MessengerAdapter(ArrayList<MessengerObject> arrayList) {
+    public MessengerAdapter(ArrayList<MessengerObject> arrayList, Context ctx) {
         this.arrayList = arrayList;
+        this.ctx = ctx;
     }
 
     @NonNull
@@ -33,13 +36,19 @@ public class MessengerAdapter extends RecyclerView.Adapter<MessengerAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         MessengerObject messengerObject = arrayList.get(position);
         holder.img_avatar.setImageResource(messengerObject.getAvatar());
         holder.tv_time.setText(messengerObject.getTime());
         holder.tv_name.setText(messengerObject.getName());
         holder.tv_number.setText(messengerObject.getNumber()+"");
         holder.tv_messenger.setText(messengerObject.getMessenger());
+        holder.item_messenger.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return false;
+            }
+        });
 
     }
 
@@ -49,6 +58,7 @@ public class MessengerAdapter extends RecyclerView.Adapter<MessengerAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        RelativeLayout item_messenger;
         ImageView img_avatar;
         TextView tv_name;
         TextView tv_messenger;
@@ -61,6 +71,7 @@ public class MessengerAdapter extends RecyclerView.Adapter<MessengerAdapter.View
             tv_messenger = itemView.findViewById(R.id.tv_messenger);
             tv_number = itemView.findViewById(R.id.tv_number);
             tv_time = itemView.findViewById(R.id.tv_time);
+            item_messenger = itemView.findViewById(R.id.item_messenger);
         }
     }
 }

@@ -1,15 +1,9 @@
 package com.vncoder.demo_1.Fragment;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -46,11 +40,11 @@ public class MessengerFragment extends Fragment {
 
         arrayList = new ArrayList<>();
         MessengerObject messengerObject = new MessengerObject("Vernon Bradley1","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
-        MessengerObject messengerObject1 = new MessengerObject("Vernon Bradley2","Shall we meet today?","5 : 45 PM",5,R.drawable.img_account);
-        MessengerObject messengerObject2 = new MessengerObject("Vernon Bradley3","Shall we meet today?","5 : 45 PM",2,R.drawable.img_account);
-        MessengerObject messengerObject3 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
-        MessengerObject messengerObject4 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
-        MessengerObject messengerObject5 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
+        MessengerObject messengerObject1 = new MessengerObject("Jason Howard","Hahahaha… \uD83D\uDE02","5 : 45 PM",5,R.drawable.img_account);
+        MessengerObject messengerObject2 = new MessengerObject("Melvin Burgess","Sounds perfect to me. \uD83D\uDE0E","5 : 45 PM",2,R.drawable.img_account);
+        MessengerObject messengerObject3 = new MessengerObject("Duane McDonald","The cost is too high. Can you ple.…","5 : 45 PM",8,R.drawable.img_account);
+        MessengerObject messengerObject4 = new MessengerObject("Isabella Clayton","I think, i am gonna go for it. Tha.…","5 : 45 PM",8,R.drawable.img_account);
+        MessengerObject messengerObject5 = new MessengerObject("Addie Cain","Ohh yeaah! YOLO!! \uD83D\uDE0D❤️","5 : 45 PM",8,R.drawable.img_account);
         MessengerObject messengerObject6 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
         MessengerObject messengerObject7 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
         MessengerObject messengerObject8 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
@@ -68,7 +62,7 @@ public class MessengerFragment extends Fragment {
         arrayList.add(messengerObject9);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
-        MessengerAdapter adapter = new MessengerAdapter(arrayList);
+        MessengerAdapter adapter = new MessengerAdapter(arrayList,getContext());
         rv_messenger.setLayoutManager(layoutManager);
         rv_messenger.setAdapter(adapter);
 
