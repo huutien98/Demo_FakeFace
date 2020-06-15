@@ -68,6 +68,20 @@ public class HomeFragment extends Fragment {
 
         HomeObject object7 = new HomeObject(4,R.drawable.img_account,R.drawable.btn_menu_dots,"Vernon Bradley",
                 "What is the loop of Creation? How is there something from nothing?","yesterday",500);
+        HomeObject object8 = new HomeObject(4,R.drawable.img_account,R.drawable.btn_menu_dots,"Vernon Bradley",
+                "What is the loop of Creation? How is there something from nothing?","yesterday",500);
+        HomeObject object9 = new HomeObject(4,R.drawable.img_account,R.drawable.btn_menu_dots,"Vernon Bradley",
+                "What is the loop of Creation? How is there something from nothing?","yesterday",500);
+        HomeObject object10 = new HomeObject(4,R.drawable.img_account,R.drawable.btn_menu_dots,"Vernon Bradley",
+                "What is the loop of Creation? How is there something from nothing?","yesterday",500);
+        HomeObject object11 = new HomeObject(4,R.drawable.img_account,R.drawable.btn_menu_dots,"Vernon Bradley",
+                "What is the loop of Creation? How is there something from nothing?","yesterday",500);
+        HomeObject object12 = new HomeObject(4,R.drawable.img_account,R.drawable.btn_menu_dots,"Vernon Bradley",
+                "What is the loop of Creation? How is there something from nothing?","yesterday",500);
+        HomeObject object13 = new HomeObject(4,R.drawable.img_account,R.drawable.btn_menu_dots,"Vernon Bradley",
+                "What is the loop of Creation? How is there something from nothing?","yesterday",500);
+        HomeObject object14 = new HomeObject(4,R.drawable.img_account,R.drawable.btn_menu_dots,"Vernon Bradley",
+                "What is the loop of Creation? How is there something from nothing?","yesterday",500);
 
         arrayList.add(object);
         arrayList.add(object2);
@@ -76,15 +90,37 @@ public class HomeFragment extends Fragment {
         arrayList.add(object5);
         arrayList.add(object6);
         arrayList.add(object7);
+        arrayList.add(object8);
+        arrayList.add(object9);
+        arrayList.add(object10);
+        arrayList.add(object11);
+        arrayList.add(object12);
+        arrayList.add(object13);
+        arrayList.add(object14);
+
+
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
         HomeAdapter = new HomeAdapter(arrayList,getContext());
         recyclerView.setAdapter(HomeAdapter);
+
         recyclerView.setLayoutManager(layoutManager);
         HomeAdapter.setArrayList(arrayList);
         setHasOptionsMenu(true);
+
+
+
+
+
+
         return view;
+
+
+
      }
+
+
+
     public void addItemsToSpinner() {
 
         ArrayList<String> list = new ArrayList<String>();
@@ -138,6 +174,7 @@ public class HomeFragment extends Fragment {
             }
         }
     }
+
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {

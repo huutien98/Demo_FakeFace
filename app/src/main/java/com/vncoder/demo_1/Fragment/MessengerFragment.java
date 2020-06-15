@@ -19,6 +19,8 @@ import com.vncoder.demo_1.R;
 
 import java.util.ArrayList;
 
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
+
 public class MessengerFragment extends Fragment {
     RecyclerView rv_messenger;
     ArrayList<MessengerObject> arrayList;
@@ -49,6 +51,13 @@ public class MessengerFragment extends Fragment {
         MessengerObject messengerObject7 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
         MessengerObject messengerObject8 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
         MessengerObject messengerObject9 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
+        MessengerObject messengerObject10 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
+        MessengerObject messengerObject11 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
+        MessengerObject messengerObject12 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
+        MessengerObject messengerObject13 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
+        MessengerObject messengerObject14 = new MessengerObject("Vernon Bradley4","Shall we meet today?","5 : 45 PM",8,R.drawable.img_account);
+
+
 
         arrayList.add(messengerObject);
         arrayList.add(messengerObject1);
@@ -60,11 +69,17 @@ public class MessengerFragment extends Fragment {
         arrayList.add(messengerObject7);
         arrayList.add(messengerObject8);
         arrayList.add(messengerObject9);
+        arrayList.add(messengerObject10);
+        arrayList.add(messengerObject11);
+        arrayList.add(messengerObject12);
+        arrayList.add(messengerObject13);
+        arrayList.add(messengerObject14);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
         MessengerAdapter adapter = new MessengerAdapter(arrayList,getContext());
         rv_messenger.setLayoutManager(layoutManager);
         rv_messenger.setAdapter(adapter);
+        rv_messenger.setItemAnimator(new SlideInUpAnimator());
 
         setHasOptionsMenu(true);
         return view;

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
@@ -122,10 +123,20 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             }
         });
 
+        setFadeAnimation(holder.itemView);
+
+
+    }
+    public void setFadeAnimation(View view) {
+        AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(1200);
+        anim.setBackgroundColor(Animation.ABSOLUTE);
+        anim.willChangeTransformationMatrix();
+        view.startAnimation(anim);
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()    {
         return arrayList.size();
     }
 
