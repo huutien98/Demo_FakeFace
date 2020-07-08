@@ -1,4 +1,4 @@
-package com.vncoder.demo_1.Object;
+package com.vncoder.demo_1.SpinnerAdapter;
 
 public class MessengerObject {
     String name;

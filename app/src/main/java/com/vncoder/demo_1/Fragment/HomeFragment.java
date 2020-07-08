@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.vncoder.demo_1.Adapter.HomeAdapter;
 import com.vncoder.demo_1.CustomSpinnerAdapter;
 import com.vncoder.demo_1.MainActivity.Main3Activity;
-import com.vncoder.demo_1.Object.HomeObject;
+import com.vncoder.demo_1.SpinnerAdapter.HomeObject;
 import com.vncoder.demo_1.R;
 
 import java.util.ArrayList;

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.vncoder.demo_1.Adapter.MessengerAdapter;
-import com.vncoder.demo_1.Object.MessengerObject;
+import com.vncoder.demo_1.SpinnerAdapter.MessengerObject;
 import com.vncoder.demo_1.R;
 
 import java.util.ArrayList;

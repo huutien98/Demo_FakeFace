@@ -16,7 +16,7 @@
         <activity android:name=".MainActivity.Main3Activity">
 
         </activity>
-        <activity android:name=".MainActivity.Main2Activity"
+        <activity android:name=".MainActivity.MainActivity"
             android:screenOrientation="portrait"
             >
             <intent-filter>
@@ -25,7 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity.MainActivity"
+
+        <activity android:name=".MainActivity.Main2Activity"
             android:screenOrientation="portrait">
 
         </activity>

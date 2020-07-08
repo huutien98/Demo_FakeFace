@@ -11,7 +11,7 @@ import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.vncoder.demo_1.Object.NotificationObject;
+import com.vncoder.demo_1.SpinnerAdapter.NotificationObject;
 import com.vncoder.demo_1.R;
 
 import java.util.ArrayList;
