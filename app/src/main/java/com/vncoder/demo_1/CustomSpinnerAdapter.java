@@ -20,8 +20,7 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
         super(context, R.layout.spinner_row, objects);
         this.context = context;
         data = objects;
-        inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
